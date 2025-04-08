@@ -28,9 +28,15 @@ export function Carrosel({ data }: CarroselProps) {
         adaptiveHeight: true,
         responsive: [
             {
-                breakpoint: 1024, 
+                breakpoint: 1280, 
                 settings: {
                     slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1024, 
+                settings: {
+                    slidesToShow: 2,
                 }
             },
             {
@@ -49,11 +55,19 @@ export function Carrosel({ data }: CarroselProps) {
     };
 
     return (
-        <Slider {...settings} className="mt-10 mb-10 mr-16 ml-16">
+        <Slider {...settings} className="mx-8 md:mx-16 xl:mx-28 mb-6">
             {data.map((item, index) => (
                 <div key={index} className="bg-zinc-950 p-5">
-                    <Box key={index} params={item}/>
+                <div className="h-[275px] bg-gray-600 p-5 rounded-xl border-2 border-transparent shadow-lg hover:border-primary transition-all duration-300 flex flex-col">
+                    <div className="flex-auto flex items-center justify-center bg-white rounded-xl p-4">
+                        <p className="text-center">{item.name}</p>
+                    </div>
+                    <div className="flex items-center justify-center bg-white rounded-lg p-4 mt-2">
+                        <p className="text-gray-600 text-sm">{item.name}</p>
+                    </div>
                 </div>
+            </div>
+            
             ))}
         </Slider>   
     );

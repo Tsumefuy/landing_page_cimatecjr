@@ -24,21 +24,22 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center text-center">
-      <section className="mt-16 px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-green-500 tracking-wide">
+      <section className="my-16 px-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-green-500 tracking-widest">
           POUPE SEU TEMPO <br /> ADQUIRA SUA PORTAL GUN
         </h1>
         <SearchBar/>
       </section>
-      <section className="bg-neutral-950 w-full mt-8 p-1">
+      <section className="bg-neutral-950 w-full p-1">
+        <h1 className="text-primary font-bold text-3xl tracking-wide md:tracking-widest mt-6">DESTAQUES</h1>
         <Carrosel data={data} />
       </section>
-      <section className="w-full bg-white py-16 px-6 text-center">
-        <h2 className="text-2xl font-bold text-green-600 mb-8">Perguntas Estúpidas que o Morty faria</h2>
+      <section className="w-full bg-white py-12 px-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-green-600 mb-8">Perguntas Estúpidas que o Morty faria</h2>
         <div className="grid md:grid-cols-3 gap-6 text-gray-800 justify-center">
           {text.map((item, index) => (
             <div key={index} className="max-w-[250px] mx-auto">
-              <h3 className="text-xl font-bold text-primary">{item.question}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-primary">{item.question}</h3>
               <p className="text-lg">{item.answer}</p>
           </div>
           ))}

@@ -7,7 +7,7 @@ import { Footer } from "./components/footer";
 const tektur = Tektur({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: 'Landing Page',
+  title: `PortalGunStore`,
   description: 'Projeto CimatecJr - Gustavo Maia',
   //icons: '/favicon.ico',
   openGraph: {

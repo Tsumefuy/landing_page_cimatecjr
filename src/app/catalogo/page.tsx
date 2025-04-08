@@ -10,14 +10,18 @@ export default function Catalogo() {
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
             <SearchBar />
-            <section className="mt-12 mb-12 w-full max-w-7xl">
-                <h1 className="text-center text-primary font-bold text-3xl mb-8">
+            <section className="mt-12 mb-12 w-full max-w-7xl text-center">
+                <h1 className="text-primary font-bold text-3xl mb-8">
                     CATÁLOGO
                 </h1>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {data.map((item, index) => (
-                        <Box key={index} params={item} />
-                    ))}
+                <div className="w-full flex justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+                        {data.map((item, index) => (
+                            <div className="flex justify-center">
+                                <Box key={index} params={item} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>
