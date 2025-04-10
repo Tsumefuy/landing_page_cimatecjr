@@ -1,7 +1,9 @@
+'use server'
+
 import { Carrosel } from "./components/carrosel";
 import { SearchBar } from "./components/searchBar";
 
-export default function Home() {
+export default async function Home() {
   const data = Array.from({ length: 8 }, (_, i) => ({
     name: `Produto ${i + 1}`,
     img: `Imagem ${i + 1}`
@@ -24,8 +26,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center text-center">
-      <section className="my-16 px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-green-500 tracking-widest">
+      <section className="mb-24 mt-44 px-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary tracking-wider md:tracking-widest">
           POUPE SEU TEMPO <br /> ADQUIRA SUA PORTAL GUN
         </h1>
         <SearchBar/>
@@ -34,7 +36,7 @@ export default function Home() {
         <h1 className="text-primary font-bold text-3xl tracking-wide md:tracking-widest mt-6">DESTAQUES</h1>
         <Carrosel data={data} />
       </section>
-      <section className="w-full bg-white py-12 px-6 text-center">
+      <section className="w-full bg-white py-24 px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-green-600 mb-8">Perguntas Estúpidas que o Morty faria</h2>
         <div className="grid md:grid-cols-3 gap-6 text-gray-800 justify-center">
           {text.map((item, index) => (
