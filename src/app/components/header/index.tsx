@@ -23,7 +23,7 @@ export function Header() {
                 <span className="text-secundary font-normal">Store</span>
             </a>
             <nav className={`md:flex items-center space-x-8 md:space-x-12 text-secundary text-base font-normal 
-                ${openMenu ? "block absolute top-20 right-0 w-full transform transition-all duration-300 ease-in-out bg-transparent shadow-md p-4" : "hidden"} `}>
+                ${openMenu ? "block absolute top-20 right-0 w-full transform transition-all duration-300 ease-in-out bg-background shadow-md p-4" : "hidden"} `}>
                 {navLinks.map((link) => (
                     <a key={link.path} href={link.path} className="relative group hover:text-gray-500 transition-all duration-300">
                         {link.name}

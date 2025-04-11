@@ -9,10 +9,9 @@ const tektur = Tektur({ subsets: ["latin"], weight: ["400", "500", "600", "700"]
 export const metadata: Metadata = {
   title: `PortalGunStore`,
   description: 'Projeto CimatecJr - Gustavo Maia',
-  //icons: '/favicon.ico',
   openGraph: {
-    title: 'Sanval Ebert te convida a acessar essa Landing Page incrível!',
-    description:'Uma Landing Page incrível para a segunda etapa do processo seletivo da CimatecJr!',
+    title: 'Acesse este site ou este homem irá te perseguir pelos corredores do Cimatec.',
+    description:'Uma Landing Page para a segunda etapa do processo seletivo da CimatecJr!',
     images: ['https://i.ibb.co/Xf7XsYN4/IMG-20250311-WA0030.jpg']
   }
 }

@@ -57,7 +57,9 @@ export function Carrosel({ data }: CarroselProps) {
         <Slider {...settings} className="mx-8 md:mx-16 xl:mx-28 mb-6">
             {data.map((item, index) => (
                 <div key={index} className="bg-zinc-950 p-5">
-                <div className="h-[275px] bg-gray-600 p-5 rounded-xl border-2 border-transparent shadow-lg hover:border-primary transition-all duration-300 flex flex-col">
+                <div className="h-[275px] bg-gray-600 p-5 rounded-xl border-2 border-transparent shadow-lg 
+                    hover:border-primary transition-all duration-500 flex flex-col"
+                >
                     <div className="flex-auto flex items-center justify-center bg-white rounded-xl p-4">
                         <p className="text-center">{item.name}</p>
                     </div>

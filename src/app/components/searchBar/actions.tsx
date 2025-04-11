@@ -1,4 +1,4 @@
-"use server";
+
 
 export async function fetchData(value: string) {
     console.log("Buscando dados para:", value);

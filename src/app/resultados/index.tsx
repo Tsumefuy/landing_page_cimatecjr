@@ -1,25 +1,12 @@
-import { Metadata } from "next";
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
 
 
-interface PortalGunsData {
-    id: number;
-    name: string;
-    img: string;
-    description: string;
+interface ResultsProps {
+    searchParams: Promise<{ query? : string; }>;
 }
 
-interface CatalogProps {
-    data: PortalGunsData[];
-}
-
-
-export const metadata: Metadata = {
-    title: `Catálogo`,
-  }
-
-export default async function Catalogo() {
+export default async function Resultados({ searchParams }: ResultsProps) {
     const data = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         name: `Produto ${i + 1}`,
@@ -27,11 +14,14 @@ export default async function Catalogo() {
         description: "Descrição"
     }));
 
+    const resolvedParams = await searchParams;
+    const query = resolvedParams.query || "";
+
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
             <section className="mt-24 mb-12 w-full max-w-7xl text-center">
                 <div className="mb-10">
-                    <SearchBar/>
+                    <SearchBar query={query}/>
                 </div>
                 <h1 className="text-primary font-bold text-3xl md:text-4xl tracking-widest mb-8">
                     CATÁLOGO
