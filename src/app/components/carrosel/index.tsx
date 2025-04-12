@@ -84,7 +84,7 @@ export function Carrosel({ data }: CarroselProps) {
             ))}
             
             </Slider> 
-            <Modal data={data} isOpen={modalIsOpen} handleClose={handleOpenModal}  />
+            <Modal isOpen={modalIsOpen} handleClose={handleOpenModal}  />
         </>
           
     );

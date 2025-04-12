@@ -36,7 +36,7 @@ export function Box({ data }: BoxProps) {
                     <p className="text-gray-600 text-sm">{data.name}</p>
                 </div>
             </button>
-            <Modal data={data} isOpen={modalIsOpen} handleClose={handleOpenModal}  />
+            <Modal isOpen={modalIsOpen} handleClose={handleOpenModal}  />
         </>
         
     )

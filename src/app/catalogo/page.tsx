@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     title: `Catálogo`,
   }
 
-export default async function Catalogo({ 
+export default async function Catalogo(/*{ 
     data 
 }: {
     data: { id: number; name: string; img: string; description: string }[];
-}) {
-    data = Array.from({ length: 8 }, (_, i) => ({
+}*/) {
+    const data = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         name: `Produto ${i + 1}`,
         img: `Imagem ${i + 1}`,

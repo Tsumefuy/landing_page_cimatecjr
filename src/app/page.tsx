@@ -34,7 +34,7 @@ export default async function Home() {
       </section>
       <section className="bg-neutral-950 w-full p-1">
         <h1 className="text-primary font-bold text-3xl tracking-wide md:tracking-widest mt-6">DESTAQUES</h1>
-        <Carrosel data={data} data_array={data}/>
+        <Carrosel data={data} />
       </section>
       <section className="w-full bg-white py-24 px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-green-600 mb-8">Perguntas Estúpidas que o Morty faria</h2>
