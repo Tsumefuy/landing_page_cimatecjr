@@ -18,7 +18,7 @@ export function Header() {
     return (
         <header className="absolute left-0 w-full h-20 flex items-center justify-between px-6 md:px-20 py-4 bg-background border-b border-black z-50">
             <Link href="/" className="flex items-center text-2xl">
-                <Image src="icon.png" alt="Portal Gun" className="h-8 mr-3 mb-1" />
+                <Image src="/icon.png" alt="Portal Gun" className="mr-3 mb-1" width={48} height={48} />
                 <span className="text-primary font-extrabold">PortalGun</span>
                 <span className="text-secundary font-normal">Store</span>
             </Link>
