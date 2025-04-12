@@ -10,11 +10,6 @@ interface PortalGunsData {
     description: string;
 }
 
-interface CatalogProps {
-    data: PortalGunsData[];
-}
-
-
 export const metadata: Metadata = {
     title: `Catálogo`,
   }
