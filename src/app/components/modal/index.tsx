@@ -24,7 +24,7 @@ export function Modal({ data, isOpen, handleClose }: ModalProps) {
                 >
                 <BoxModal data={data} />
                 <div className="mt-4 md:ml-4 text-base text-left break-words">
-                    <p>{data.description}</p>
+                    <p>{/*data.description*/}Descrição</p>
                 </div>
                 <button
                     type="button"

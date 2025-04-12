@@ -26,7 +26,7 @@ export function Box({ data }: BoxProps) {
             <button 
             type="button"
             onClick={handleOpenModal}
-            className="h-[275px] w-[300px] bg-gray-600 p-5 rounded-xl border-2 border-transparent 
+            className="h-[275px] w-[300px] bg-neutral-800 p-5 rounded-xl border-2 border-transparent 
                 shadow-lg hover:border-primary transition-all duration-500"
             >
                 <div className="h-[170px] flex flex-col bg-white rounded-xl justify-center text-center">

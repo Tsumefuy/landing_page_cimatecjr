@@ -3,10 +3,14 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import { Modal } from "../modal";
 
 interface Product {
+    id: number;
     name: string;
     img: string;
+    description: string;
 }
 
 interface CarroselProps {
@@ -53,23 +57,35 @@ export function Carrosel({ data }: CarroselProps) {
         ]
     };
 
+    const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+    
+    const handleOpenModal = () => {
+            setModalIsOpen(!modalIsOpen);
+    }
+
     return (
-        <Slider {...settings} className="mx-8 md:mx-16 xl:mx-28 mb-6">
+        <>
+            <Slider {...settings} className="mx-8 md:mx-16 xl:mx-28 mb-6">
             {data.map((item, index) => (
                 <div key={index} className="bg-zinc-950 p-5">
-                <div className="h-[275px] bg-gray-600 p-5 rounded-xl border-2 border-transparent shadow-lg 
-                    hover:border-primary transition-all duration-500 flex flex-col"
-                >
-                    <div className="flex-auto flex items-center justify-center bg-white rounded-xl p-4">
-                        <p className="text-center">{item.name}</p>
-                    </div>
-                    <div className="flex items-center justify-center bg-white rounded-lg p-4 mt-2">
-                        <p className="text-gray-600 text-sm">{item.name}</p>
+                    <div className="h-[275px] bg-neutral-800
+                    p-5 rounded-xl border-2 border-transparent shadow-lg 
+                        hover:border-primary transition-all duration-500 flex flex-col"
+                        onClick={handleOpenModal}
+                    >
+                        <div className="flex-auto flex items-center justify-center bg-white rounded-xl p-4">
+                            <p className="text-center">{item.name}</p>
+                        </div>
+                        <div className="flex items-center justify-center bg-white rounded-lg p-4 mt-2">
+                            <p className="text-gray-600 text-sm">{item.name}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
             ))}
-        </Slider>   
+            
+            </Slider> 
+            <Modal data={data} isOpen={modalIsOpen} handleClose={handleOpenModal}  />
+        </>
+          
     );
 }

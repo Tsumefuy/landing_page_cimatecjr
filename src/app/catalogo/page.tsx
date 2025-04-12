@@ -30,8 +30,10 @@ export default async function Catalogo() {
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
             <section className="mt-24 mb-12 w-full max-w-7xl text-center">
-                <div className="mb-10">
-                    <SearchBar/>
+                <div className="mb-10 flex justify-center">
+                    <div className="w-full max-w-[900px]">
+                        <SearchBar />
+                    </div>
                 </div>
                 <h1 className="text-primary font-bold text-3xl md:text-4xl tracking-widest mb-8">
                     CATÁLOGO

@@ -2,11 +2,11 @@ import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
 
 
-interface ResultsProps {
-    searchParams: Promise<{ query? : string; }>;
-}
-
-export default async function Resultados({ searchParams }: ResultsProps) {
+export default async function Resultados({
+    searchParams 
+}: {
+    searchParams: { [query: string]: string | string[] | undefined};
+ }) {
     const data = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         name: `Produto ${i + 1}`,
@@ -14,8 +14,7 @@ export default async function Resultados({ searchParams }: ResultsProps) {
         description: "Descrição"
     }));
 
-    const resolvedParams = await searchParams;
-    const query = resolvedParams.query || "";
+    const query = searchParams.query as string;
 
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
