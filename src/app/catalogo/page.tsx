@@ -2,20 +2,16 @@ import { Metadata } from "next";
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
 
-
-interface PortalGunsData {
-    id: number;
-    name: string;
-    img: string;
-    description: string;
-}
-
 export const metadata: Metadata = {
     title: `Catálogo`,
   }
 
-export default async function Catalogo() {
-    const data = Array.from({ length: 8 }, (_, i) => ({
+export default async function Catalogo({ 
+    data 
+}: {
+    data: { id: number; name: string; img: string; description: string }[];
+}) {
+    data = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         name: `Produto ${i + 1}`,
         img: `Imagem ${i + 1}`,
