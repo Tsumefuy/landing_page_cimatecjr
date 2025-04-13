@@ -6,9 +6,7 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "cd ../../packages/db && prisma generate",
-    "prisma:generate": "cd ../../packages/db && prisma generate"
+    "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
