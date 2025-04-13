@@ -1,20 +1,30 @@
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
 
-
 export default async function Resultados({
-    searchParams 
+    searchParams
 }: {
     searchParams: { [query: string]: string | string[] | undefined};
  }) {
-    const data = Array.from({ length: 8 }, (_, i) => ({
-        id: i + 1,
-        name: `Produto ${i + 1}`,
-        img: `Imagem ${i + 1}`,
-        description: "Descrição"
-    }));
+
+    type PortalGun = {
+        id: number;
+        name: string;
+        img: string;
+        description: string;
+    }
 
     const query = searchParams.query as string;
+
+    const guns = await prisma?.catalog.findMany({
+        where: {
+            name: {
+                contains: 'Portal'
+            },
+        },
+    });
+
+    console.log(guns)
 
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
@@ -27,9 +37,9 @@ export default async function Resultados({
                 </h1>
                 <div className="w-full flex justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-                        {data.map((item, index) => (
-                            <div key={index} className="flex justify-center">
-                                <Box key={index} data={item} />
+                        {guns?.map((gun: PortalGun) => (
+                            <div className="flex justify-center">
+                                <Box data={gun} />
                             </div>
                         ))}
                     </div>

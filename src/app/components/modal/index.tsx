@@ -1,28 +1,21 @@
 import { FaXmark } from "react-icons/fa6";
 import { BoxModal } from "../box_modal";
 
-/*interface PortalGunData {
+interface PortalGunData {
     id: number;
     name: string;
     img: string;
     description: string;
-}*/
+}
 
 interface ModalProps {
-    //data: PortalGunData;
+    data: PortalGunData;
     isOpen: boolean;
     handleClose: () => void;
 }
 
-export function Modal({ isOpen, handleClose }: ModalProps) {
+export function Modal({ data, isOpen, handleClose }: ModalProps) {
     if (!isOpen) return null;
-
-    /*const data = Array.from({ length: 8 }, (_, i) => ({
-        id: i + 1,
-        name: `Produto ${i + 1}`,
-        img: `Imagem ${i + 1}`,
-        description: "Descrição"
-    }));*/
 
     return(
         <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -30,9 +23,9 @@ export function Modal({ isOpen, handleClose }: ModalProps) {
             <div className="relative items-start md:flex z-10 h-full max-h-[425px] md:max-h-[325px] md:rounded-xl w-full max-w-3xl 
                 md:overflow-y-auto bg-background p-6"
                 >
-                <BoxModal />
+                <BoxModal data={data}/>
                 <div className="mt-4 md:ml-4 text-base text-left break-words">
-                    <p>{/*data.description*/}Descrição</p>
+                    <p>{data.description}</p>
                 </div>
                 <button
                     type="button"

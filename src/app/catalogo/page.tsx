@@ -1,22 +1,22 @@
 import { Metadata } from "next";
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
+import { prisma } from "@/lib/db";
 
 export const metadata: Metadata = {
     title: `Catálogo`,
   }
 
-export default async function Catalogo(/*{ 
-    data 
-}: {
-    data: { id: number; name: string; img: string; description: string }[];
-}*/) {
-    const data = Array.from({ length: 8 }, (_, i) => ({
-        id: i + 1,
-        name: `Produto ${i + 1}`,
-        img: `Imagem ${i + 1}`,
-        description: "Descrição"
-    }));
+export default async function Catalogo() {
+
+    type PortalGun = {
+        id: number;
+        name: string;
+        img: string;
+        description: string;
+    }
+
+    const guns = await prisma.catalog.findMany();
 
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
@@ -31,9 +31,9 @@ export default async function Catalogo(/*{
                 </h1>
                 <div className="w-full flex justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-                        {data.map((item, index) => (
+                        {guns.map((gun: PortalGun, index) => (
                             <div key={index} className="flex justify-center">
-                                <Box key={index} data={item} />
+                                <Box data={gun} />
                             </div>
                         ))}
                     </div>
