@@ -31,7 +31,7 @@ export default async function Catalogo() {
                 </h1>
                 <div className="w-full flex justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-                        {guns.map((gun: PortalGun, index) => (
+                        {guns.map((gun: PortalGun, index: number) => (
                             <div key={index} className="flex justify-center">
                                 <Box data={gun} />
                             </div>
