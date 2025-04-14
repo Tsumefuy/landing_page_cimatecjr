@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
-import { prisma } from "@/lib/db";
+import { prisma } from '@/lib/prisma';
 
 export const metadata: Metadata = {
     title: `Catálogo`,

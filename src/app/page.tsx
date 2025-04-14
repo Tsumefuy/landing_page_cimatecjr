@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { prisma } from '@/lib/prisma';
 import { Carrosel } from "./components/carrosel";
 import { SearchBar } from "./components/searchBar";
 
