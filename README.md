@@ -2,9 +2,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-Para rodar o projeto:
+## Para rodar o projeto:
 
-# Crie um arquivo .env na raiz do projeto e adicione:
+### Crie um arquivo .env na raiz do projeto e adicione:
 
 ```bash
 DATABASE_URL="file:./dev.db"
