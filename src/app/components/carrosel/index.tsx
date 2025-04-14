@@ -14,24 +14,13 @@ interface PortalGun {
   description: string;
 }
 
-export function Carrosel() {
-  const [data, setData] = useState<PortalGun[]>([]); // Estado para armazenar os dados
+export function Carrosel({ 
+  data
+}: {
+  data: PortalGun[]
+}) {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<PortalGun | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/api/highlights'); // Substitua com o seu endpoint
-        const result = await response.json();
-        setData(result); // Atualiza o estado com os dados recebidos
-      } catch (error) {
-        console.error("Erro ao carregar dados:", error);
-      }
-    };
-
-    fetchData();
-  }, []); 
 
   const settings = {
     dots: false,
