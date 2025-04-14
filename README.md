@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+Para rodar o projeto:
+
+# Crie um arquivo .env na raiz do projeto e adicione:
+
+```bash
+DATABASE_URL="file:./dev.db"
+```
 
 ```bash
 npm install
@@ -16,8 +22,6 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Depois abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 
