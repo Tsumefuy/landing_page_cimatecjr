@@ -1,7 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
-
 ## Para rodar o projeto:
 
 ### Crie um arquivo .env na raiz do projeto e adicione:
