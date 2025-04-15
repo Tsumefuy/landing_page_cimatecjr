@@ -1,5 +1,6 @@
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
+import { prisma } from '@/lib/prisma';
 
 export default async function Resultados({
     searchParams
