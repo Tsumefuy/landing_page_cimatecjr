@@ -7,13 +7,12 @@ Olá, meu nome é Gustavo, e essa é a minha landing page, ela é baseada no uni
 ### Crie um arquivo .env na raiz do projeto e adicione:
 
 ```bash
-DATABASE_URL="file:./dev.db"
+NEXT_PUBLIC_SUPABASE_URL=https://xxfrngdrypkuzjyxllkx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4ZnJuZ2RyeXBrdXpqeXhsbGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3NDkzMTAsImV4cCI6MjA2MDMyNTMxMH0.cDa0CV2JITCuCIWVJU6p4EfslXO2IRBMZ7ZsRgPgkCc
 ```
 
 ```bash
 npm install
-
-npx prisma generate
 
 npm run dev
 # or
