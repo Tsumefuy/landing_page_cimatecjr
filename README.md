@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Olá, meu nome é Gustavo, e essa é a minha landing page, ela é baseada no universo de Rick and Morty, sendo uma loja de armas de portal.
+Olá, meu nome é Gustavo, e essa é a minha landing page, ela é baseada no universo de Rick and Morty, sendo uma loja de armas de portal. Infelizmente, o deploy na vercel ainda não está funcionando corretamente.
 
 ## Para rodar o projeto:
 
