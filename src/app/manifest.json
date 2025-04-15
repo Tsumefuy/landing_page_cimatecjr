@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "PortalGunStore",
+  "short_name": "PortalGunStore",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
