@@ -1,12 +1,14 @@
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
-import { prisma } from '@/lib/prisma';
+import { createClient } from '@/utils/supabase/server';
 
 export default async function Resultados({
     searchParams
 }: {
     searchParams: Promise<{ [query: string]: string | string[] | undefined}>;
  }) {
+
+    const supabase = await createClient();
 
     type PortalGun = {
         id: number;
@@ -17,13 +19,7 @@ export default async function Resultados({
 
     const query = (await searchParams).query as string;
 
-    const guns = await prisma?.catalog.findMany({
-        where: {
-            name: {
-                contains: query
-            },
-        },
-    });
+    const { data: guns } = await supabase.from('catalog').select().ilike('name', `%${query}%`);
 
     const noResults = !guns || guns.length === 0;
 

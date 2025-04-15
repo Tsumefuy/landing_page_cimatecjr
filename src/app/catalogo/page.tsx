@@ -1,13 +1,15 @@
 import { Metadata } from "next";
+import { createClient } from '@/utils/supabase/server';
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
-import { prisma } from '@/lib/prisma';
+
 
 export const metadata: Metadata = {
     title: `Catálogo`,
   }
 
 export default async function Catalogo() {
+    const supabase = await createClient();
 
     type PortalGun = {
         id: number;
@@ -16,7 +18,7 @@ export default async function Catalogo() {
         description: string;
     }
 
-    const guns = await prisma.catalog.findMany();
+    const { data: guns } = await supabase.from('catalog').select()
 
     return (
         <div className="flex flex-col items-center justify-center w-full px-4">
@@ -31,7 +33,7 @@ export default async function Catalogo() {
                 </h1>
                 <div className="w-full flex justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full max-w-5xl">
-                        {guns.map((gun: PortalGun, index: number) => (
+                        {guns?.map((gun: PortalGun, index: number) => (
                             <div key={index} className="flex justify-center">
                                 <Box data={gun} />
                             </div>
