@@ -12,17 +12,14 @@ Crie um arquivo .env na raiz do projeto e adicione:
 NEXT_PUBLIC_SUPABASE_URL=https://xxfrngdrypkuzjyxllkx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4ZnJuZ2RyeXBrdXpqeXhsbGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3NDkzMTAsImV4cCI6MjA2MDMyNTMxMH0.cDa0CV2JITCuCIWVJU6p4EfslXO2IRBMZ7ZsRgPgkCc
 ```
-
+Depois execute o seguinte comando no terminal para instalar todas as dependências:
 ```bash
 npm install
+```
 
+Após isso, execute com:
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Depois abra [http://localhost:3000](http://localhost:3000) no seu navegador.
