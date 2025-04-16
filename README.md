@@ -1,4 +1,4 @@
-### PortalGunStore
+# PortalGunStore
 
 Olá, meu nome é Gustavo, e essa é a minha landing page, ela é baseada no universo de Rick and Morty, sendo uma loja de armas de portal.
 
