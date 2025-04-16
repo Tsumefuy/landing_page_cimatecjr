@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ### PortalGunStore
 
 Olá, meu nome é Gustavo, e essa é a minha landing page, ela é baseada no universo de Rick and Morty, sendo uma loja de armas de portal.
+
+Link para o site: https://portalgunstore.vercel.app/
 
 ## Para rodar o projeto:
 
