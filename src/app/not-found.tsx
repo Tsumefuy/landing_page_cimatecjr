@@ -1,4 +1,4 @@
-import { SearchBar } from "./components/searchBar";
+
 
 export default function NotFound() {
   return (

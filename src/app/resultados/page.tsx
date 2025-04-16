@@ -1,28 +1,15 @@
+import { fetchGunsSearched, PortalGun } from "../actions";
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
-//import { createClient } from '@/utils/supabase/server';
-import { supabase } from '@/utils/supabase/server';
 
 export default async function Resultados({
     searchParams
 }: {
     searchParams: Promise<{ [query: string]: string | string[] | undefined}>;
  }) {
-
-    //const supabase = await createClient();
-
-    type PortalGun = {
-        id: number;
-        name: string;
-        img: string;
-        description: string;
-    }
-
     const query = (await searchParams).query as string;
 
-    const { data: guns, error } = await supabase.from('catalog').select().ilike('name', `%${query}%`);
-
-    console.log(error);
+    const guns = await fetchGunsSearched(query);
 
     const noResults = !guns || guns.length === 0;
 
@@ -45,7 +32,7 @@ export default async function Resultados({
             <section className="mt-24 mb-12 w-full max-w-7xl text-center">
                 <div className="mb-10 flex justify-center">
                     <div className="w-full max-w-[900px]">
-                        <SearchBar />
+                        <SearchBar query={query}/>
                     </div>
                 </div>
                 <h1 className="text-primary font-bold text-3xl md:text-4xl tracking-widest mb-8">

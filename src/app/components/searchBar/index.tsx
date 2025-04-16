@@ -1,7 +1,6 @@
 import Form from "next/form";
 import { AiOutlineSearch } from 'react-icons/ai';
 
-
 export function SearchBar({ query }: { query?: string | undefined }) {
     return (
         <Form action="/resultados" formMethod="get" scroll={false} className='relative w-full'>

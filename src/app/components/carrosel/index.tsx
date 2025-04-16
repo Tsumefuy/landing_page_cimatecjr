@@ -3,16 +3,11 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from "../modal";
 import Image from "next/image";
+import { PortalGun } from "@/app/actions";
 
-interface PortalGun {
-  id: number;
-  name: string;
-  img: string;
-  description: string;
-}
 
 export function Carrosel({ 
   data

@@ -1,12 +1,10 @@
-import { supabase } from "@/utils/supabase/server";
 import { Carrosel } from "./components/carrosel";
 import { SearchBar } from "./components/searchBar";
+import { fetchGunsHighligths } from "./actions";
 
 export default async function Home() {
 
-  //const supabase = await createClient();
-
-  const { data: guns } = await supabase.from('highlights').select();
+  const guns = await fetchGunsHighligths();
 
   const noResults = !guns || guns.length === 0;
 

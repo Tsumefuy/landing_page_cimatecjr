@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { supabase } from '@/utils/supabase/server';
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
+import { PortalGun } from "../actions";
 
 
 export const metadata: Metadata = {
@@ -9,13 +10,6 @@ export const metadata: Metadata = {
   }
 
 export default async function Catalogo() {
-
-    type PortalGun = {
-        id: number;
-        name: string;
-        img: string;
-        description: string;
-    }
 
     const { data: guns } = await supabase.from('catalog').select()
 
