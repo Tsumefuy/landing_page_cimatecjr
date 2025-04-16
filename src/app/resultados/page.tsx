@@ -1,6 +1,7 @@
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
-import { createClient } from '@/utils/supabase/server';
+//import { createClient } from '@/utils/supabase/server';
+import { supabase } from '@/utils/supabase/server';
 
 export default async function Resultados({
     searchParams
@@ -8,7 +9,7 @@ export default async function Resultados({
     searchParams: Promise<{ [query: string]: string | string[] | undefined}>;
  }) {
 
-    const supabase = await createClient();
+    //const supabase = await createClient();
 
     type PortalGun = {
         id: number;
@@ -19,7 +20,9 @@ export default async function Resultados({
 
     const query = (await searchParams).query as string;
 
-    const { data: guns } = await supabase.from('catalog').select().ilike('name', `%${query}%`);
+    const { data: guns, error } = await supabase.from('catalog').select().ilike('name', `%${query}%`);
+
+    console.log(error);
 
     const noResults = !guns || guns.length === 0;
 

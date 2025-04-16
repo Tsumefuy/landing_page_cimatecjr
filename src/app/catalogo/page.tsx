@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { createClient } from '@/utils/supabase/server';
+import { supabase } from '@/utils/supabase/server';
 import { Box } from "../components/box";
 import { SearchBar } from "../components/searchBar";
 
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   }
 
 export default async function Catalogo() {
-    const supabase = await createClient();
 
     type PortalGun = {
         id: number;
