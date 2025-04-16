@@ -24,4 +24,18 @@ npm run dev
 
 Depois abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
+## Brainstorming
+
+###Descrição geral: 
+Minha ideia é uma loja "virtual" de Portal Guns do universo de Rick and Morty, elas serão mostradas em um carrosel de imagens, ao clicar em uma delas será aberto um pop-up com os detalhes da arma e o procedimento (descrição e formulário a ser preenchido) para efetuar a compra. Haverá tbm uma barra de navegação para a procura de armas específicas, para isso, vou tentar add uma quantidade diversificada para isso ser viável, tipo umas 15 a 20 armas diferentes, estou considerando a utilização de IA para gerar modelos de armas, mas vou tentar procurar modelos reais criados pelo estúdio. O rodapé será bem simples, vou zoar um pouco aqui com algumas referências ao universo colocar alguns Links. Primeiramente, vou procurar uns modelos de Landing Page, até pq não sou muito designer, mas durante o projeto vou tentar ser o mais autêntico possível e confiar nas minhas habilidades, ou seja, limitar o uso de IA (principalmente no código, tirando as imagens rsrs) e CTRL C CTRL V. Responsividade e ReadMe por último. 
+
+Checklist dos requisitos obrigatórios desenvolvidos:
+- Barra de navegação |✓|
+- Catálogo de produtos |✓|
+- Carrossel de imagens (produtos |✓|
+- Rodapé |✓|
+- Design responsivo Mobile Firts |✓|
+- ReadMe |✓|
+
+
 
